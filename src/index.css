@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: #0a0f1f;
+  min-height: 100dvh;
+}
+
+.ticker-track {
+  animation: ticker-scroll linear infinite;
+  will-change: transform;
+}
+@media (hover: hover) {
+  .ticker-viewport:hover .ticker-track {
+    animation-play-state: paused;
+  }
+}
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
